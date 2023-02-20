@@ -1,0 +1,15 @@
+#banner-home .content {
+    position: absolute; 
+    color:white; 
+    margin: 60px;  
+    font-weight: 600;
+}
+
+#banner-home #form-booking {
+    margin: 40px;
+    position: relative; 
+    top: -80px; 
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid rgb(151, 150, 150);
+}

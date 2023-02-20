@@ -1,0 +1,15 @@
+.navbar-nav .nav-link {
+    color: black;
+}
+
+#navbar-right {
+    position: fixed; 
+    right: 60px;
+}
+#navbar-right .nav-item a:hover{
+    color: red;
+}
+
+#logo-en .logo-en-fill {
+    fill: #ff5b00;
+}
