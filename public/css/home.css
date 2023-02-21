@@ -1,15 +1,39 @@
+/* css banner home */
 #banner-home .content {
-    position: absolute; 
-    color:white; 
-    margin: 60px;  
+    position: absolute;
+    color: white;
+    margin: 60px;
     font-weight: 600;
 }
 
 #banner-home #form-booking {
     margin: 40px;
-    position: relative; 
-    top: -80px; 
+    position: relative;
+    top: -80px;
     background-color: white;
     border-radius: 20px;
     border: 1px solid rgb(151, 150, 150);
+}
+
+/* css form-booking */
+#form-booking .booking-content {
+    background-color: #f5f5f5;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#form-booking .bg-hover:hover {
+    background-color: #ecf3fc;
+}
+
+#form-booking .booking-content input {
+    border: none;
+    outline: none;
+    background-color: #f5f5f5;
+}
+
+#form-booking .booking-content input:hover {
+    background-color: #ecf3fc;
+    border: none;
+    outline: none;
 }
