@@ -4,8 +4,8 @@ class category {
   findAll = () => {
     return new Promise((resolve, reject) => {
       connect.query("SELECT * FROM category", function (err, data) {
-        if (err || data.length == 0) {
-          reject(new Error("Không thể lấy dữ liệu"));
+        if (err) {
+          reject(new Error(err));
         } else {
           resolve(data);
         }

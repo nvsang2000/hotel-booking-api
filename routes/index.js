@@ -1,19 +1,20 @@
-var express = require('express');
-var router = express.Router();
-var AccountController = require("../controller/AccountController");
+const express = require('express');
+const router = express.Router();
+const AuthController = require("../controller/AuthController");
+const HomeController = require("../controller/HomeController")
 
 /* GET home page. */
-router.get("/", AccountController.getHome);
+router.get("/", HomeController.getHome);
 
-router.get("/layout", AccountController.getLayout);
+router.get("/login", AuthController.getLogin);
 
-router.get("/login", AccountController.getLogin);
+router.post("/login", AuthController.postLogin);
 
-router.post("/login", AccountController.postLogin);
+router.get("/signup", AuthController.getSignup);
 
-router.get("/signup", AccountController.getSignup);
+router.post("/signup", AuthController.postSignup);
 
-router.post("/signup", AccountController.postSignup);
+router.get("/product/:id", HomeController.getProduct);
 
 
 

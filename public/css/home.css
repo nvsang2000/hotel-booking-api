@@ -7,7 +7,9 @@
 }
 
 #banner-home #form-booking {
-    margin: 40px;
+    height: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
     position: relative;
     top: -80px;
     background-color: white;
@@ -36,4 +38,13 @@
     background-color: #ecf3fc;
     border: none;
     outline: none;
+}
+
+.swiper {
+    width: 90%;
+    /* đặt chiều rộng cho Swiper container */
+    margin: 0 auto;
+    /* canh giữa Swiper container */
+    overflow: hidden;
+    /* ngăn chặn Swiper scroll tràn màn hình */
 }

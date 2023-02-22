@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div style="margin: 40px;">
+        <% product.slideBanner.map((banner)=> { %>
+            <img style="width: 200px; height: 200px;" class="card-img-top" src="<%= banner %>" alt="Card image">
+        <% }) %>
+        <div class="card-body">
+            <h3 style="font-size: 20px; font-weight: 600;">
+                <%= product.title %>
+            </h3>
+            <div>từ
+                <span style="color: #ff5b00; font-weight: 600; font-size: 18px;">
+                    <%= product.price %>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

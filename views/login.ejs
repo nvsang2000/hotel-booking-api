@@ -26,6 +26,12 @@
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
 
+                    <% if (typeof message !=='undefined' ) { %>
+                        <p style="color: red; margin-top: 10px; text-align: center;">
+                            <%= message %>
+                        </p>
+                    <% } %>
+
                     <div class="form-link">
                         <a href="#" class="forgot-pass">Forgot password?</a>
                     </div>
