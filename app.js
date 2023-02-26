@@ -1,16 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var bodyParser = require("body-parser");
-var expressLayouts = require("express-ejs-layouts");
-var connect = require('./db/connectDB')
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const bodyParser = require("body-parser");
+const expressLayouts = require("express-ejs-layouts");
+const connect = require('./db/connectDB')
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const feHomeRouter = require('./routes/frontend/home');
+const feProductsRouter = require("./routes/frontend/products");
 
-var app = express();
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,8 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout");
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use("/", feHomeRouter);
+app.use("/products", feProductsRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/asset", express.static(__dirname + "public/asset"));

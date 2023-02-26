@@ -1,6 +1,6 @@
-const connect = require("../db/connectDB");
-const Category = require("../model/category");
-const Product = require("../model/product");
+const connect = require("../../db/connectDB");
+const Category = require("../../model/category");
+const Product = require("../../model/products");
 
 class HomeController {
   getHome = async (req, res) => {
@@ -21,7 +21,6 @@ class HomeController {
       slideBanner: JSON.parse(productDetail?.[0]?.slideBanner),
     }; 
 
-    console.log("productDetail", product);
     if (productDetail.length > 0) {
       return res.render("products/productDetail", {
         title: "Products",

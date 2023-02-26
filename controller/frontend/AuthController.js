@@ -1,5 +1,5 @@
-const connect = require("../db/connectDB");
-const Account = require("../model/account");
+const connect = require("../../db/connectDB");
+const Account = require("../../model/accounts");
 
 class AccountController {
   getSignup = async (req, res) => {
