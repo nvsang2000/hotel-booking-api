@@ -13,6 +13,4 @@ router.get("/signup", AuthController.getSignup);
 
 router.post("/signup", AuthController.postSignup);
 
-router.get("/product/:id", HomeController.getProduct);
-
 module.exports = router;
