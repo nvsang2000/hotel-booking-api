@@ -1,8 +1,31 @@
 const bcrypt = require("bcrypt");
 const ResError = require("../../constant");
-const { ResponseFailed, SystemError, ResponseSuccess } = require("../../constant/response");
+var jwt = require("jsonwebtoken");
+const {
+  ResponseFailed,
+  SystemError,
+  ResponseSuccess,
+} = require("../../constant/response");
+const { findByEmail } = require("../../model/accounts");
 const Account = require("../../model/accounts");
 class AccountController {
+  postLogin = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+      const auth = await findByEmail(email);
+      if (auth?.length === 0) return ResponseFailed(res, ResError.EMAIL_INVALID);
+      auth?.map(async (e) => {
+        const passwordValid = await bcrypt.compare(password, e?.password);
+        if (!passwordValid) return ResponseFailed(res, ResError.PASS_NOT_EXIST);
+        const accessToken = jwt.sign(
+          { id: e.id, email: e.email, phone: e.phone },
+          "secret",{expiresIn: "1h"});
+        ResponseSuccess(res, accessToken);
+      });
+    } catch (error) {
+      return SystemError(res, ResError.SYS_ERROR);
+    }
+  };
   postAccountUser = async (req, res) => {
     const account = req.body;
     if (!account.email) return ResponseFailed(res, ResError.EMAIL_INVALID);
@@ -15,7 +38,7 @@ class AccountController {
         await Account.create(account);
         return ResponseSuccess(res);
       } else {
-        return ResponseFailed(res,UPDATE_SUCCESS)
+        return ResponseFailed(res,UPDATE_SUCCESS);
       }
     } catch (error) {
       return SystemError(res, ResError.SYS_ERROR);
@@ -43,7 +66,7 @@ class AccountController {
     const account = req.body;
     try {
       await Account.update(account, id);
-      return ResponseSuccess(res)
+      return ResponseSuccess(res);
     } catch (error) {
       return SystemError(res, ResError.SYS_ERROR);
     }
