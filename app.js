@@ -9,6 +9,7 @@ const connect = require('./db/connectDB')
 
 const feHomeRouter = require('./routes/frontend/home');
 const feProductsRouter = require("./routes/frontend/products");
+const BaAdminsRouter = require("./routes/api/admin")
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.set("layout", "./layouts/layout");
 
 app.use("/", feHomeRouter);
 app.use("/products", feProductsRouter);
+app.use("/api",BaAdminsRouter)
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/asset", express.static(__dirname + "public/asset"));
