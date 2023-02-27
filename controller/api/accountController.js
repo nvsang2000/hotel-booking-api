@@ -1,42 +1,41 @@
 const bcrypt = require("bcrypt");
+const ResError = require("../../constant");
+const { ResponseFailed, SystemError, ResponseSuccess } = require("../../constant/response");
 const Account = require("../../model/accounts");
-
 class AccountController {
   postAccountUser = async (req, res) => {
     const account = req.body;
-    if (!account.email)
-      return res.json({ status: 400, message: "Email không thể để trống" });
-    if (!account.password)
-      return res.json({ status: 400, message: "Password không thể để trống" });
+    if (!account.email) return ResponseFailed(res, ResError.EMAIL_INVALID);
+    if (!account.password) return ResponseFailed(res, ResError.PASSWORD_INVALID);
     try {
       const email = await Account.findByEmail(account.email);
       const saltRounds = 10;
       account.password = bcrypt.hashSync(account.password, saltRounds);
       if (email?.length === 0) {
         await Account.create(account);
-        return res.json({ status: 200, message: "Tạo tài khoản thành công" });
+        return ResponseSuccess(res);
       } else {
-        return res.json({ status: 400, message: "Email đã tồn tại" });
+        return ResponseFailed(res,UPDATE_SUCCESS)
       }
     } catch (error) {
-      return res.json({ status: 500, message: `Lỗi server ${error}` });
+      return SystemError(res, ResError.SYS_ERROR);
     }
   };
   getAccountUser = async (req, res) => {
     try {
       const list = await Account.findAll();
-      return res.json({ status: 200, data: list });
+      return ResponseSuccess(res,list);
     } catch (error) {
-      return res.json({ status: 500, message: `Lỗi server ${error}` });
+      return SystemError(res, ResError.SYS_ERROR);
     }
   };
   getDetailAccountUser = async (req, res) => {
     const id = Number(req.params.id);
     try {
       const list = await Account.getUserId(id);
-      return res.json({ status: 200, data: list });
+      return ResponseSuccess(res,list);
     } catch (error) {
-      return res.json({ status: 500, message: `Lỗi server ${error}` });
+      return SystemError(res, ResError.SYS_ERROR);
     }
   };
   putAccountUser = async (req, res) => {
@@ -44,18 +43,18 @@ class AccountController {
     const account = req.body;
     try {
       await Account.update(account, id);
-      return res.json({ status: 200, message: "Cập nhật thành công" });
+      return ResponseSuccess(res)
     } catch (error) {
-      return res.json({ status: 500, message: `Lỗi server ${error}` });
+      return SystemError(res, ResError.SYS_ERROR);
     }
   };
   deleteAccountUser = async (req, res) => {
     const id = Number(req.params.id);
     try {
       await Account.delete(id);
-      return res.json({ status: 200, message: "Xóa thành công" });
+      return ResponseFailed(res,ResError.DELETE_SUCCESS);
     } catch (error) {
-      return res.json({ status: 500, message: `Lỗi server ${error}` });
+      return SystemError(res, ResError.SYS_ERROR);
     }
   };
 }
