@@ -41,7 +41,7 @@ class AccountController {
         await Account.create({ ...req?.body, password: newPassword});
         return ResponseSuccess(res);
       } else {
-        return ResponseFailed(res, UPDATE_SUCCESS);
+        return ResponseFailed(res, ResError.EMAIL_EXIST);
       }
     } catch (error) {
       return SystemError(res, error);   
