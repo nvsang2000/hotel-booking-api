@@ -6,30 +6,35 @@ const logger = require('morgan');
 const bodyParser = require("body-parser");
 const expressLayouts = require("express-ejs-layouts");
 const connect = require('./db/connectDB')
+const app = express();
 
 const feHomeRouter = require('./routes/frontend/home');
 const feProductsRouter = require("./routes/frontend/products");
-const BaAdminsRouter = require("./routes/api/admin")
 
 
-const app = express();
+// api
+const router = require("./routes/api/index");
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressLayouts);
+router(app)
+
 app.set("layout", "./layouts/layout");
 
 app.use("/", feHomeRouter);
 app.use("/products", feProductsRouter);
-app.use("/api",BaAdminsRouter)
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/asset", express.static(__dirname + "public/asset"));
@@ -45,8 +50,8 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
