@@ -1,20 +1,25 @@
 /* css banner home */
-#banner-home .content {
+#container-home .content {
     position: absolute;
     color: white;
     margin: 60px;
     font-weight: 600;
 }
 
-#banner-home #form-booking {
-    height: 100px;
+#container-home #form-booking {
     margin-left: 40px;
     margin-right: 40px;
     position: relative;
-    top: -80px;
+    top: -50px;
     background-color: white;
     border-radius: 20px;
-    border: 1px solid rgb(151, 150, 150);
+    box-shadow: 0px 0.5px #d4d1d1;
+}
+
+#container-home .text-title {
+    font-size: 28px;
+    color: #333333;
+    font-weight: 600;
 }
 
 /* css form-booking */
@@ -40,11 +45,38 @@
     outline: none;
 }
 
+#form-booking .text-form-search {
+    margin-left: 2px;
+    font-size: 12px;
+    color: #757575;
+    font-family: '-apple-system';
+    font-weight: 500;
+    line-height: 18px;
+}
+
+#form-booking .input-form-search {
+    font-size: 12px;
+}
+
+#form-booking #button-search {
+    height: 60px;
+    width: 100;
+    background: #ff5b00;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    justify-content: center;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+
 .swiper {
-    width: 90%;
-    /* đặt chiều rộng cho Swiper container */
     margin: 0 auto;
-    /* canh giữa Swiper container */
     overflow: hidden;
-    /* ngăn chặn Swiper scroll tràn màn hình */
+}
+
+.svg-icon {
+    fill: #ff5b00;
 }

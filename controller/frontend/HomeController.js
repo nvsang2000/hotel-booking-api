@@ -14,17 +14,13 @@ class HomeController {
   };
   getProduct = async (req, res) => {
     const productId = req.params.id
-  
     const productDetail = await Product.findById(productId);
-    const product = {
-      ...productDetail?.[0],
-      slideBanner: JSON.parse(productDetail?.[0]?.slideBanner),
-    }; 
+    console.log("productDetail", productDetail);
 
     if (productDetail.length > 0) {
       return res.render("products/productDetail", {
         title: "Products",
-        product: product,
+        product: productDetail[0],
       });
     }
   }
