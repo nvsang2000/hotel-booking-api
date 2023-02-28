@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require("body-parser");
 const expressLayouts = require("express-ejs-layouts");
+const cors = require('cors')
 const connect = require('./db/connectDB')
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressLayouts);
+app.use(cors())
 router(app)
 
 app.set("layout", "./layouts/layout");
@@ -49,8 +51,6 @@ app.use('/uploads', express.static( __dirname +'public/uploads'));
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-
 
 // error handler
 app.use(function(err, req, res, next) {
