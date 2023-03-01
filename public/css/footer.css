@@ -1,0 +1,37 @@
+#content-footer ul li a {
+    text-decoration: none;
+}
+
+#content-footer #footer-notification #Noti {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    background: url(https://res.klook.com/image/upload/v1615521825/ommkzuaadeoqpqn2rqt4.png) no-repeat -160px -10px;
+}
+
+#content-footer .css-a {
+    font-size: 12px;
+    color: #757575;
+    font-family: -apple-system;
+    opacity: 0.6;
+}
+
+#content-footer .css-a-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+
+#content-footer .css-pay {
+    width: 40px;
+    height: 25px;
+    margin-left: 10px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
