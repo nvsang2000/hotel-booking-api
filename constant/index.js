@@ -7,6 +7,7 @@ const ResError = {
   DELETE_SUCCESS: { code: "200", message: "Xóa thành công" },
   UPDATE_SUCCESS: { code: "200", message: "Cập nhật thành công" },
   PASS_NOT_EXIST:  { code: "400", message: "Mật khẩu không đúng" },
+  EMAIL_ERR: { code: "400", message: "Email không đúng" },
 };
 
 module.exports = ResError;
