@@ -8,6 +8,7 @@ const ResError = {
   UPDATE_SUCCESS: { code: "200", message: "Cập nhật thành công" },
   PASS_NOT_EXIST:  { code: "400", message: "Mật khẩu không đúng" },
   EMAIL_ERR: { code: "400", message: "Email không đúng" },
+  NOT_FOUND_DATA: { code: "404", message: "Không tìm thấy data" },
 };
 
 module.exports = ResError;

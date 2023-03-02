@@ -1,90 +1,32 @@
 var connect = require("../db/connectDB");
+const Conn = require("../db/Conn");
 class Account {
   findAll = () => {
-    return new Promise((resolve, reject) => {
-      connect.query("SELECT * FROM account", function (err, data) {
-        if (err) {
-          reject(new Error(err));
-        } else {
-          resolve(data);
-        }
-      });
-    });
+    const sql = "SELECT * FROM account";
+    return Conn.GetList(sql, []);
   };
   findByEmail = (email) => {
-    return new Promise((resolve, reject) => {
-      connect.query(
-        "SELECT * FROM account WHERE email=?",
-        [email],
-        function (err, data) {
-          if (err) {
-            reject(new Error(err));
-          } else {
-            resolve(data);
-          }
-        }
-      );
-    });
+    const sql = "SELECT * FROM account WHERE email=?";
+    return Conn.GetList(sql, [email]);
   };
   create = (account) => {
-    return new Promise((resolve, reject) => {
-      connect.query(
-        "INSERT INTO account (email, password, phone) values (?, ?, ?)",
-        [account.email, account.password, account.phone],
-        function (err, data) {
-          if (err) {
-            reject(new Error(err));
-          } else {
-            resolve(data);
-          }
-        }
-      );
-    });
+    const sql = "INSERT INTO account (email, password, phone) values (?, ?, ?)";
+    const value = [account.email, account.password, account.phone];
+    return Conn.Excute(sql, value);
   };
   getUserId = (id) => {
-    return new Promise((resolve, reject) => {
-      connect.query(
-        "SELECT id, email, phone FROM account WHERE id=?",
-        [id],
-        function (err, data) {
-          if (err) {
-            reject(new Error(err));
-          } else {
-            resolve(data);
-          }
-        }
-      );
-    });
+    const sql = "SELECT id, email, phone FROM account WHERE id=?";
+    return Conn.GetOne(sql, [id]);
   };
   update = (account, id) => {
-    return new Promise((resolve, reject) => {
-      connect.query(
-        "UPDATE account SET? WHERE id=?",
-        [account, id],
-        function (err, data) {
-          if (err) {
-            reject(new Error(err));
-          } else {
-            resolve(data);
-          }
-        }
-      );
-    });
+    const sql = "UPDATE account SET? WHERE id=?";
+    const value = [account, id];
+    return Conn.Excute(sql, value);
   };
   delete = (account, id) => {
-    return new Promise((resolve, reject) => {
-      connect.query(
-        "DELETE FROM account WHERE id=?",
-        [account, id],
-        function (err, data) {
-          if (err) {
-            reject(new Error(err));
-          } else {
-            resolve(data);
-          }
-        }
-      );
-    });
+    const sql = "DELETE FROM account WHERE id=?";
+    const value = [account, id];
+    return Conn.Excute(sql, value);
   };
 }
 module.exports = new Account();
