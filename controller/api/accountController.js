@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const ResError = require("../../constant");
-var jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const {
   ResponseFailed,
   SystemError,
