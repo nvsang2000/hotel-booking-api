@@ -78,7 +78,7 @@ class AccountController {
     const id = Number(req.params.id);
     try {
       await Account.delete(id);
-      return ResponseFailed(res, ResError.DELETE_SUCCESS);
+      return ResponseSuccess(res, ResError.DELETE_SUCCESS);
     } catch (error) {
       return SystemError(res, ResError.SYS_ERROR);
     }
