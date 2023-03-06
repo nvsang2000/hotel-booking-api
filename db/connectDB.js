@@ -1,9 +1,9 @@
-var mysql = require("mysql");
-var connect = mysql.createConnection({
-  host: "sql9.freemysqlhosting.net",
-  user: "sql9601403",
-  password: "8lyetW1BSB",
-  database: "sql9601403",
+const mysql = require("mysql");
+const connect = mysql.createConnection({
+  host: "db4free.net",
+  user: "adminbooking123",
+  password: "adminbooking123",
+  database: "hotelbooking12",
 });
 
 connect.connect(function (err) {
