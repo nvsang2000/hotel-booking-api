@@ -1,9 +1,9 @@
 const mysql = require("mysql");
 const connect = mysql.createConnection({
-  host: "db4free.net",
-  user: "adminbooking123",
-  password: "adminbooking123",
-  database: "hotelbooking12",
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
 });
 
 connect.connect(function (err) {
