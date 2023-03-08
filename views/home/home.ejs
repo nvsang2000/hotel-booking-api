@@ -43,58 +43,58 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container" style="margin-left: 30px; margin-right: 30px;">
-        <div id="slide-category" style="margin-bottom: 40px;">
-            <div class="text-title">Nghỉ dưỡng với gói ưu đãi</div>
-            <div id="swiper-category" class="swiper">
-                <div class="swiper-wrapper" style="margin-left: -10px;">
-                    <% category.map((item)=> { %>
-                        <div class="card swiper-slide" style="margin-left: 10px; border-radius: 10px;">
-                            <img class="card-img-top" src="<%= item.banner %>" alt="Card image" width="250px">
-                            <div class="card-img-overlay text-bottom"
-                                style="display: flex; align-items: end; justify-content: center;">
-                                <text style="font-size: 16px; color: white; font-weight: 600;">
-                                    <%= item.tilte %>
-                                </text>
-                            </div>
+    </div>  
+</div>
+<div class="container-fluid" style="padding-left: 40px; padding-right: 40px;">
+    <div id="slide-category" style="margin-bottom: 40px;">
+        <div class="text-title">Nghỉ dưỡng với gói ưu đãi</div>
+        <div id="swiper-category" class="swiper">
+            <div class="swiper-wrapper" style="margin-left: -10px;">
+                <% category.map((item)=> { %>
+                    <div class="card swiper-slide" style="margin-left: 10px; border-radius: 10px;">
+                        <img class="card-img-top" src="<%= item.banner %>" alt="Card image" width="250px">
+                        <div class="card-img-overlay text-bottom"
+                            style="display: flex; align-items: end; justify-content: center;">
+                            <text style="font-size: 16px; color: white; font-weight: 600;">
+                                <%= item.tilte %>
+                            </text>
                         </div>
+                    </div>
+                    <% }) %>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <div id="slide-product" style="margin-bottom: 40px;">
+        <div class="text-title">Các nơi lưu trú nổi bật</d>
+            <div id="swiper-products" class="swiper">
+                <div class="swiper-wrapper" style="margin-left: -10px;">
+                    <% products.map((item)=> { %>
+                        <a href="/products/<%= item.id %>" style="color: black; text-decoration: none;">
+                            <div class="card" style="margin-left: 10px; border-radius: 8px;">
+                                <img style="width: 300px; height: 200px;" class="card-img-top" src="<%= item.banner %>"
+                                    alt="Card image">
+                                <div class="card-body">
+                                    <h3 style="font-size: 20px; font-weight: 600;">
+                                        <%= item.title %>
+                                    </h3>
+                                    <div>từ
+                                        <span style="color: #ff5b00; font-weight: 600; font-size: 18px;">
+                                            <%= item.price %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     <% }) %>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
         </div>
-        <div id="slide-product" style="margin-bottom: 40px;">
-            <div class="text-title">Các nơi lưu trú nổi bật</d>
-                <div id="swiper-products" class="swiper">
-                    <div class="swiper-wrapper" style="margin-left: -10px;">
-                        <% products.map((item)=> { %>
-                            <a href="/products/<%= item.id %>" style="color: black; text-decoration: none;">
-                                <div class="card" style="margin-left: 10px; border-radius: 8px;">
-                                    <img style="width: 300px; height: 200px;" class="card-img-top" src="<%= item.banner %>"
-                                        alt="Card image">
-                                    <div class="card-body">
-                                        <h3 style="font-size: 20px; font-weight: 600;">
-                                            <%= item.title %>
-                                        </h3>
-                                        <div>từ
-                                            <span style="color: #ff5b00; font-weight: 600; font-size: 18px;">
-                                                <%= item.price %>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <% }) %>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-        </div>
-        
+
     </div>
-</div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
     var swiperCategory = new Swiper('#swiper-category', {
