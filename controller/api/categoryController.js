@@ -1,9 +1,5 @@
 const Category = require("../../model/category");
-const {
-  ResponseFailed,
-  SystemError,
-  ResponseSuccess,
-} = require("../../constant/response");
+const {SystemError,ResponseSuccess} = require("../../constant/response");
 const ResError = require("../../constant");
 
 class CategoryController {
@@ -37,21 +33,21 @@ class CategoryController {
     const id = Number(req.params.id);
     const category = req.body;
     try {
-        await Category.Update(id, category);
-        ResponseSuccess(res)
+      await Category.Update(id, category);
+      ResponseSuccess(res);
     } catch (error) {
-        return SystemError(res, ResError.SYS_ERROR);
+      return SystemError(res, ResError.SYS_ERROR);
     }
-  }
+  };
   deleteCategory = async (req, res) => {
     const id = Number(req.params.id);
     try {
-        await Category.Delete(id);
-        ResponseSuccess(res)
+      await Category.Delete(id);
+      ResponseSuccess(res);
     } catch (error) {
-        return SystemError(res, ResError.SYS_ERROR);
+      return SystemError(res, ResError.SYS_ERROR);
     }
-  }
+  };
 }
 
 module.exports = new CategoryController();
