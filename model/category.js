@@ -13,7 +13,7 @@ class Category {
     });
   };
   Create = (category) => {
-    const sql = "INSERT INTO category (banner, tilte) value (?,?)";
+    const sql = "INSERT INTO category (banner, tilte) VALUE (?,?)";
     const value = [category.banner, category.tilte]
     return Conn.Excute(sql, value);
   }

@@ -3,7 +3,9 @@ const cloudinary = require("../../middlewares/cloudinary");
 const postUpload = async (req, res) => {
   try {
     if (req?.file) {
-      const result = await cloudinary.uploader.upload(req.file.path);
+      const result = await cloudinary.uploader.upload(req.file.path, {
+        folder: "hotel_booking",
+      });
       if (result.url) {
         return res.json({ status: 200, url: result.url });
       } else {

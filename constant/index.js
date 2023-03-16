@@ -1,14 +1,14 @@
 const ResError = {
   SYS_ERROR: { message: "Lỗi server" },
-  EMAIL_INVALID: { code: "400", message: "Email không thể để trống" },
-  EMAIL_EXIST: { code: "400", message: "Email đã tồn tại" },
-  PASSWORD_INVALID: { code: "400", message: "Mật khẩu không thể để trống" },
-  ACCOUNT_SUCCESS: { code: "200", message: "Tạo tài khoản thành công" },
-  DELETE_SUCCESS: { code: "200", message: "Xóa thành công" },
-  UPDATE_SUCCESS: { code: "200", message: "Cập nhật thành công" },
-  PASS_NOT_EXIST:  { code: "400", message: "Mật khẩu không đúng" },
-  EMAIL_ERR: { code: "400", message: "Email không đúng" },
-  NOT_FOUND_DATA: { code: "404", message: "Không tìm thấy data" },
+  EMAIL_INVALID: { message: "Email không thể để trống" },
+  EMAIL_EXIST: { message: "Email đã tồn tại" },
+  PASSWORD_INVALID: { message: "Mật khẩu không thể để trống" },
+  ACCOUNT_SUCCESS: { message: "Tạo tài khoản thành công" },
+  DELETE_SUCCESS: { message: "Xóa thành công" },
+  UPDATE_SUCCESS: { message: "Cập nhật thành công" },
+  PASS_NOT_EXIST: { message: "Mật khẩu không đúng" },
+  EMAIL_ERR: { message: "Email không đúng" },
+  NOT_FOUND_DATA: { message: "Không tìm thấy data" },
 };
 
 module.exports = ResError;
