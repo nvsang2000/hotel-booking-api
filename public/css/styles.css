@@ -1,3 +1,91 @@
 div {
     font-family: -apple-system;
 }
+.css-a-1{
+    max-width: 100%;
+    display: flex;  
+    color: black; 
+    background-color: rgb(223, 223, 221);
+    align-items:center;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    padding: 0 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+#btn{
+    width: 250px;
+    height: 50px;
+    background-color: rgb(251, 112, 20);
+    border-color:rgb(251, 112, 20);
+    color: white;
+    border-width: 1px;
+    border-radius: 8px;
+    border-style: solid;
+    border: none;
+    outline: none;
+}
+#btn:hover{
+    background-color: rgb(205, 205, 205);
+}
+.rate{
+    border: 1px solid #e6e6e6;
+    min-height: 140px;
+    min-width: 0;
+    background-color: white;
+    align-items: stretch;
+    padding-left: 30px;
+    padding-top: 15px;
+    border-radius:8px;
+    display: flex;
+}
+.score-ratting{
+    position: relative;
+    display: flex;
+}
+#score-1{
+    font-size: 50px;
+    color: rgb(255, 174, 0);
+    
+}
+.recomment{
+    padding-top: 80px;
+    margin-left: -200px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+.center-1{
+    border: 1px solid #e6e6e6;
+    min-height: 160px;
+    min-width: 0;
+    background-color: white;
+    border-radius:8px;
+
+}
+.map{
+    border: 1px solid #e6e6e6;
+    min-height: 160px;
+    min-width: 300px;
+    background-color: white;
+    border-radius:8px;
+
+}
+.css-booking-text{
+    font-size: 20px;
+}
+#css-line{
+    font-size: 20px;
+    margin-left: 2px;
+}
+#btn-booking{
+    color: white;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 97, 61);
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+}
+#btn-booking:hover{
+    background-color: #e6e6e6;
+}
