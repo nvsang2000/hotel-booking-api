@@ -1,4 +1,3 @@
-const connect = require("../../db/connectDB");
 const Category = require("../../model/category");
 const Product = require("../../model/products");
 
@@ -15,14 +14,13 @@ class HomeController {
   getProduct = async (req, res) => {
     const productId = req.params.id
     const productDetail = await Product.findById(productId);
-    console.log("productDetail", productDetail);
-
-    if (productDetail.length > 0) {
+    if (Object.keys(productDetail).length > 0) {
       return res.render("products/productDetail", {
         title: "Products",
-        product: productDetail[0],
+        product: productDetail,
       });
     }
+    return res.redirect('/')
   }
 }
 

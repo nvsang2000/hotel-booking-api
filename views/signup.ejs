@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>SIGNUP</title>
 </head>
+
 <body>
     <section class="container">
         <div class="form login">
@@ -17,33 +18,18 @@
                 <header>Signup</header>
                 <form action="/signup" method="post">
                     <div class="info">
-                        <input 
-                            type="email" 
-                            placeholder="Email" 
-                            class="input" 
-                            name="email" 
-                        />
+                        <input type="email" placeholder="Email" class="input" name="email" />
                     </div>
                     <div class="info">
-                        <input 
-                            id="password" 
-                            type="password" 
-                            placeholder="Vui lòng nhập mật khẩu" 
-                            class="password"
-                            name="password" 
-                        />
+                        <input id="password" type="password" placeholder="Vui lòng nhập mật khẩu" class="password"
+                            name="password" />
                         <div onclick="togglePassword('password')">
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
                     </div>
                     <div class="info">
-                        <input 
-                            id="confirmPassword"
-                            type="password" 
-                            placeholder="Vui lòng nhập mật khẩu" 
-                            class="password" 
-                            name="confirmPassword"
-                        />
+                        <input id="confirmPassword" type="password" placeholder="Vui lòng nhập mật khẩu"
+                            class="password" name="confirmPassword" />
                         <div onclick="togglePassword('confirmPassword')">
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
@@ -52,10 +38,10 @@
                         <p style="color: red; margin-top: 10px; text-align: center;">
                             <%= message %>
                         </p>
-                    <% } %>
-                    <div class="info button">
-                        <button type="submit">Signup</button>
-                    </div>
+                        <% } %>
+                            <div class="info button">
+                                <button type="submit">Signup</button>
+                            </div>
                 </form>
 
                 <div class="form-link">
