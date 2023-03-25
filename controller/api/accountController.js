@@ -15,7 +15,6 @@ class AccountController {
       const auth = await findByEmail(email);
       if (auth?.length === 0)
         return ResponseFailed(res, ResError.EMAIL_ERR);
-
       const passwordValid = await bcrypt.compare(password, auth?.[0]?.password);
       if (!passwordValid) return ResponseFailed(res, ResError.PASS_NOT_EXIST);
       const accessToken = jwt.sign(
