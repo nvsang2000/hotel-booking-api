@@ -1,197 +1,150 @@
-<div class="container-fluid">
-    <div style="margin-left: 40px; margin-right: 40px; margin-top: 20px;">
-        <div style="display: flex;">
-            <div class="col-sm-6" style="padding-left: 4px; padding-right: 4px;">
-                <img width="600px" height="100%" class="card-img-top" src="<%= product.banner %>" alt="Card image">
-            </div>
-            <div class="col-sm-6" style="padding-left: 4px; padding-right: 4px;">
-                <div style="display: flex;">
-                    <div class="col-sm-6" style="padding-left: 4px; padding-right: 4px;">
-                        <img class="card-img-top" src="<%= product.banner %>" alt="Card image">
-                    </div>
-                    <div class="col-sm-6" style="padding-left: 4px; padding-right: 4px;">
-                        <img class="card-img-top" src="<%= product.banner %>" alt="Card image">
-                    </div>
-
+<div class="product-page__container">
+    <div style="display: flex;">
+        <div class="col-sm-6 content-p-4">
+            <img width="600px" height="100%" class="card-img-top" src="<%= product.banner %>" alt="Card image">
+        </div>
+        <div class="col-sm-6 content-p-4">
+            <div style="display: flex;">
+                <div class="col-sm-6 content-p-4">
+                    <img class="card-img-top" src="<%= product.banner %>" alt="Card image">
                 </div>
-                <div style="display: flex; margin-top: 10px;">
-                    <div class="col-sm-6" style="padding-left: 4px; padding-right: 4px;">
-                        <img class="card-img-top" src="<%= product.banner %>" alt="Card image">
-                    </div>
-                    <div class="col-sm-6" style="padding-left: 4px; padding-right: 4px;">
-                        <img class="card-img-top" src="<%= product.banner %>" alt="Card image">
-                    </div>
+                <div class="col-sm-6 content-p-4">
+                    <img class="card-img-top" src="<%= product.banner %>" alt="Card image">
+                </div>
+
+            </div>
+            <div style="display: flex; margin-top: 10px;">
+                <div class="col-sm-6 content-p-4">
+                    <img class="card-img-top" src="<%= product.banner %>" alt="Card image">
+                </div>
+                <div class="col-sm-6 content-p-4">
+                    <img class="card-img-top" src="<%= product.banner %>" alt="Card image">
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row product-title">
         <div class="col-sm-12 col-xl-8">
-            <h1>Hilton Guangzhou Tianhe</h1>
-            <p> Khách sạn · 5 Sao (Sang trọng)</p>
-            <ul style="display: flex; list-style: none; text-decoration: none;">
-                <li><a class="css-a-1" href="" style="text-decoration: none;">Trải nghiệm tốt nhất</a></li>
-                <li><a class="css-a-1" href="">Sân Khách sạn Tốt nhấtt</a></li>
-                <li><a class="css-a-1" href="">Bể bơi Tốt nhất</a></li>
-                <li><a class="css-a-1" href="">Dịch vụ Chăm sóc Sức khỏe Tốt nhất</a></li>
-            </ul>
+            <div style="margin-top: 10px;">
+                <h4>Hilton Guangzhou Tianhe</h4>
+                <div> Khách sạn · 5 Sao (Sang trọng)</div>
+                <ul>
+                    <li><a href="#">Trải nghiệm tốt nhất</a></li>
+                    <li><a href="#">Sân Khách sạn Tốt nhấtt</a></li>
+                    <li><a href="#">Bể bơi Tốt nhất</a></li>
+                    <li><a href="#">Dịch vụ Chăm sóc Sức khỏe Tốt nhất</a></li>
+                </ul>
+            </div>
         </div>
         <div class="col-sm-12 col-xl-4">
-            <div style="padding: 20px;">
-            
+            <div style="margin-top: 10px;">
                 <div class="price">
-                    <span style="font-size: 30px;">₫ 5,031,334</span>
+                    <span style="font-size: 24px;">₫ 5,031,334</span>
                     <span style="opacity: 0.6;">Mỗi đêm</span>
                 </div>
-                <button id="btn">
-                    <span>Kiểm tra trạng thái dịch vụ</span>
-                </button>
+                <button type="button" class="btn btn-danger" style="border-radius: 10px;">Kiểm tra trạng thái dịch vụ</button>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row info-product">
         <div class="col-sm-12 col-xl-4" style="margin-top: 10px;">
-            <div class="rate">
-                <div class="score">
-                    <span id="score-1">4.2</span>
-                    <span>/5</span>
+            <div class="info-product__content">
+                <div style="display: flex;">
+                    <div class="rating-score">
+                        <span style="font-size: 30px; color: rgb(255, 174, 0);">4.2</span>
+                        <span>/5</span>
+                    </div>
+                    <div style="display: flex; justify-content: center; padding-top: 14px;">
+                        <img src="/svg/star.svg" width="20px" height="20px" />
+                        <img src="/svg/star.svg" width="20px" height="20px" />
+                        <img src="/svg/star.svg" width="20px" height="20px" />
+                        <img src="/svg/star.svg" width="20px" height="20px" />
+                        <img src="/svg/star.svg" width="20px" height="20px" />
+                    </div>
                 </div>
-                <div class="score-ratting" >
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="score-text" style="padding-top: 40px; margin-left: -60px;">
+                <div class="score-text">
                     <span>Rất tốt</span>
                     <span>790 bình luận</span>
                 </div>
-                <div class="recomment">
-                    <img style="width: 38px; height: 38px;"
-                        src="https://res.klook.com/image/upload/Group_909_fyxat1.webp" alt="">
-                    <div style="margin-left: 50px; margin-top: -30px;">YONGKI</div>
-                </div>
+                <span>Xem chi tiết</span>
             </div>
         </div>
         <div class="col-sm-12 col-xl-4" style="margin-top: 10px;">
-            <div class="center-1" style="display: flex;">
-                <span style="margin-right: 8px; margin-left: 10px; margin-top: 20px; ">
-                    <img style="width: 20px; height: 20px;;"
-                        src="https://wifi4g2go.com/wp-content/uploads/2018/06/vai-tro-quan-trong-cua-internet-hien-nay-1024x678.jpg"
-                        alt="">
+            <div class="info-product__content">
+                <div>
+                    <img src="/svg/ic-wifi.svg" width="20px" height="20px" />
                     <span>WIFI</span>
-                </span>
-                <span style="margin-right: 8px; margin-left: 10px; margin-top: 20px;">
                     <img style="width: 25px; height: 25px;;"
                         src="https://banner2.cleanpng.com/20180614/kvf/kisspng-dumbbell-computer-icons-logo-dumbbell-icon-5b22fdddb39bd4.7551913415290198697357.jpg"
                         alt="">
                     <span>Trung Tâm Thể Hình</span>
-                </span>
-                <span style="padding-top: 70px; margin-left: -250px;">
+                </div>
+                <div>
                     <img style="width: 25px; height: 25px;"
                         src="https://banner2.cleanpng.com/20180614/kvf/kisspng-dumbbell-computer-icons-logo-dumbbell-icon-5b22fdddb39bd4.7551913415290198697357.jpg"
                         alt="">
                     <span>Đón và trả khách trạm tàu hoả/xe buýt, sân bay</span>
-                </span>
-                <span style="padding-top: 110px; margin-left: -325px; text-decoration: underline;">Xem chi tiết</span>
+                </div>
+                <span>Xem chi tiết</span>
             </div>
         </div>
         <div class="col-sm-12 col-xl-4" style="margin-top: 10px;">
-            <div class="map" style="display: flex;">
-                <div style="margin-right: 8px; margin-left: 30px; margin-top: 20px;" class="street">
-                    199 Huang Pu Road
-                </div>
-                <div>
-                    <ul>
-                        <li style="padding-top: 70px; margin-left: -160px;">Đường Tác Phổ (Zhapu), 400m</li>
-                    </ul>
-                </div>
-                <div style="padding-top: 110px; margin-left: -220px; text-decoration: underline;" class="map-text">Xem
-                    chi tiết</div>
+            <div class="info-product__content">
+                <div>199 Huang Pu Road</div>
+                <div>Đường Tác Phổ (Zhapu), 400m<</div>
+                <div>Xem chi tiết</div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12" style="display: flex;">
-            <div class="box"
-                style="box-sizing: border-box; border: 2px solid #fb0000; border-radius: 30px; width: 10px; background-color: #fb0000; height: 50px; ">
+    <hr style="margin: 20px 0px 20px 0px;">
+    <div style="font-size: 24px; font-weight: 500;">Các gói dịch vụ</div>
+    <div class="row info-service">
+        <div class="col-sm-12 col-xl-8">
+            <div class="info-service__contaner">
+                <div style="font-size: 26px;">
+                    <p>Vui lòng chọn ngày & gói dịch vụ</p>
+                </div>
+                <div style="font-size: 20px;">
+                    <p>Vui lòng chọn ngày đổi voucher dự tính. Ngày bạn chọn khi đặt chỉ
+                        mang tính tham khảo Voucher của bạn có hạn sử dụng tới ngày 31/3/2023.
+                        Vui lòng liên hệ nhà điều hành để tiến hành đặt phòng
+                    </p>
+                </div>
+                <button type="button" class="btn btn-danger" style="border-radius: 10px;">Xem trạng thái dịch vụ</button>
+                <div>
+                    <div style="font-size: 20px; margin-top: 20px;">Loại gói dịch vụ</div>
+                    <button type="button" class="btn btn-border">Gói 1: Phòng Và Bữa Sáng</button>
+                    <button type="button" class="btn btn-border">Gói 2: Phòng, Bữa Sáng Kèm Vui Chơi Tại VinWonders và Safari</button>
+                    <button type="button" class="btn btn-border">Gói 3: Phòng, 3 Bữa Ăn Kèm Vui Chơi Tại VinWonders Và Safari</button>
+                    <button type="button" class="btn btn-border">Gói 4: Phòng và 3 Bữa Ăn</button>
+                </div>
+               
+                <div style="margin-top: 20px;font-size: 20px;">Số đêm</div>
+                <div>
+                    <button type="button" class="btn btn-border">1 Đêm</button>
+                    <button type="button" class="btn btn-border">2 Đêm</button>
+                </div>
+                <div style="display: flex; margin-top: 20px;">
+                    <p style="font-size: 30px;">₫ 2,900,000</p>
+                    <p style="margin-left: 20px; margin-top: 16px; text-decoration: line-through;">₫ 3,550,000</p>
+                </div>
+                <div>
+                    <p>Vui lòng hoàn tất các mục yêu cầu để chuyển đến bước tiếp theo</p>
+                    <button type="button" class="btn btn-success" style="border-radius: 10px;">Thêm vào giỏ hàng</button>
+                    <button type="button" class="btn btn-danger" style="border-radius: 10px;">Đặt ngay</button>
+                </div>
             </div>
-            <h1 style="margin-left: 10px;">Các gói dịch vụ</h1>
-        </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-7"
-            style="background-color: rgb(246, 246, 246); height: 700px; margin-top: 20px; border-radius: 30px; padding: 30px 30px 30px 30px; margin-bottom: 40px;">
-            <div class="text1" style="font-size: 50px;">
-                <p>Vui lòng chọn ngày & gói dịch vụ</p>
-            </div>
-            <div class="text2" style="font-size: 20px;">
-                <p>Vui lòng chọn ngày đổi voucher dự tính. Ngày bạn chọn khi đặt chỉ
-                    mang tính tham khảo Voucher của bạn có hạn sử dụng tới ngày 31/3/2023.
-                    Vui lòng liên hệ nhà điều hành để tiến hành đặt phòng
-                </p>
-            </div>
-            <button class="btn2"
-                style="border-radius: 15px; height: 40px; color:white; background: #fb0000; border: none; width: 200px;">Xem
-                trạng thái dịch vụ</button>
-            <div class="text3" style="font-size: 20px; margin-top: 20px;">
-                <p>Loại gói dịch vụ</p>
-            </div>
-            <div class="pack1" style="display: flex; padding-bottom: 10px; border-radius: 20px;">
-                <button class="btn3" style="width: 250px;">Gói 1: Phòng Và Bữa Sáng</button>
-                <button class="btn3" style="width: 500px; margin-left: 20px;">Gói 2: Phòng, Bữa Sáng Kèm Vui Chơi Tại
-                    VinWonders và Safari</button>
-            </div>
-            <div class="pack2" style="display: flex;">
-                <button class="btn3" style="width: 500px;">Gói 3: Phòng, 3 Bữa Ăn Kèm Vui Chơi Tại VinWonders Và
-                    Safari</button>
-                <button class="btn3" style="width: 250px; margin-left: 20px;">Gói 4: Phòng và 3 Bữa Ăn</button>
-            </div>
-            <div class="text4" style="margin-top: 20px;font-size: 20px;">
-                <p>Số đêm</p>
-            </div>
-            <div class="pack3">
-                <button class="btn3">1 Đêm</button>
-                <button class="btn3" style="margin-left: 20px;">2 Đêm</button>
-            </div>
-            <div class="text5" style="display: flex; margin-top: 20px;">
-                <p style="font-size: 30px;">₫ 2,900,000</p>
-                <p style="margin-left: 20px; margin-top: 16px; text-decoration: line-through;">₫ 3,550,000</p>
 
-            </div>
-            <div class="text6" style="display: flex;">
-                <p>Vui lòng hoàn tất các mục yêu cầu để chuyển đến bước tiếp theo</p>
-                <button class="btn4" style="margin-left: 120px;">Thêm vào giỏ hàng</button>
-                <button class="btn4" style="margin-left: 20px;">Đặt ngay</button>
-            </div>
         </div>
-        <div class="col-sm-3"
-            style="background-color: rgb(246, 246, 246); width: 100px; height: 700px; margin-left: 30px; margin-top: 20px; border-radius: 30px; ">
-            <div class="detail-text" style="padding: 20px ;">
-                <div class="text7">
-                    <p style="font-size: 30px;">Chi tiết gói dịch vụ</p>
-                </div>
-                <div class="text8" style="display: flex;">
-                    <p style="border:1px solid black; width: 150px; border-radius: 10px; padding-left: 20px">Không hoàn huỷ</p>
-                    <p style="margin-left: 20px; border:1px solid black; width: 150px;  padding-left: 18px;  border-radius: 10px;">Xác nhận tức thời</p>
-                </div>
-                <div class="text9">
-                    <p style="border:1px solid black; width: 150px;  padding-left: 16px;  border-radius: 10px;">Đặt ngay hôm nay</p>
+        <div class="col-sm-12 col-xl-4">
+            <div style="background-color: rgb(240, 240, 240); padding: 16px; border-radius: 20px; margin-top: 10px;">
+                <div style="font-size: 24px;">Chi tiết gói dịch vụ</div>
+                <div>
+                    <button type="button" class="btn btn-border">Không hoàn hủy</button>
+                    <button type="button" class="btn btn-border">Xác nhận tức thời</button>
+                    <button type="button" class="btn btn-border">Đăt ngay hôm nay</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- <div style="margin: 40px;">
-        <div class="card-body">
-            <img style="width: 200px; height: 200px;" class="card-img-top" src="<%= product.banner %>" alt="Card image">
-            <h3 style="font-size: 20px; font-weight: 600;">
-                <%= product.title %>
-            </h3>
-            <div>từ
-                <span style="color: #ff5b00; font-weight: 600; font-size: 18px;">
-                    <%= product.price %>
-                </span>
-            </div>
-        </div>
-    </div> -->
