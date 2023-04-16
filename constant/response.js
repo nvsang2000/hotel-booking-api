@@ -1,4 +1,6 @@
+// mẫu response chung cho tất cả các api
 const SystemError = (res, error) => {
+  // lỗi của hệ thống
   console.log(error);
   res.status(500).json({
     code: "SYS500",
@@ -7,6 +9,7 @@ const SystemError = (res, error) => {
 };
 
 const ResponseFailed = (res, message) => {
+  // lỗi của người dùng
   console.log(message.message);
   res.status(400).json(message);
 };
@@ -17,6 +20,7 @@ const ResponseFailed = (res, message) => {
     message: "OK",
     content,
   });
+// thông báo thành công
 
 
   module.exports = {SystemError,ResponseFailed,ResponseSuccess}

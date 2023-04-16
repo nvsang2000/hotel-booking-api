@@ -9,15 +9,17 @@ const expressLayouts = require("express-ejs-layouts");
 const cors = require("cors");
 const app = express();
 
-const feHomeRouter = require("./routes/frontend/home");
-const feProductsRouter = require("./routes/frontend/products");
 
 // api
-const router = require("./routes/api/index");
+const adminRouter = require("./routes/admin");
+const indexRouter = require("./routes/index")
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.get("/", function (req, res) {
+  res.render("index", { title: "Homepage", layout: "base" });
+});
 
 app.use(logger("dev"));
 app.use(bodyParser.json());
@@ -29,12 +31,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(expressLayouts);
 app.use(cors());
-router(app);
-
-app.set("layout", "./layouts/layout");
-
-app.use("/", feHomeRouter);
-app.use("/products", feProductsRouter);
+app.use('/admin', adminRouter)
+app.use('/', indexRouter)
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/asset", express.static(__dirname + "public/asset"));

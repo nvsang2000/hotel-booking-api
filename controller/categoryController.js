@@ -1,6 +1,6 @@
-const Category = require("../../model/category");
-const {SystemError,ResponseSuccess} = require("../../constant/response");
-const ResError = require("../../constant");
+const Category = require("../model/category");
+const {SystemError,ResponseSuccess} = require("../constant/response");
+const ResError = require("../constant");
 
 class CategoryController {
   postCategory = async (req, res) => {

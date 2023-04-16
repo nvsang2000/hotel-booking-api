@@ -1,4 +1,4 @@
-const cloudinary = require("../../middlewares/cloudinary");
+const cloudinary = require("../middlewares/cloudinary");
 
 const postUpload = async (req, res) => {
   try {
