@@ -1,10 +1,10 @@
-const product = require("../../model/products");
+const product = require("../model/products");
 const {
   SystemError,
   ResponseSuccess,
   ResponseFailed,
-} = require("../../constant/response");
-const ResError = require("../../constant");
+} = require("../constant/response");
+const ResError = require("../constant");
 class ProductController {
   postProduct = async (req, res) => {
     const basic_info = req.body;

@@ -1,4 +1,5 @@
 const ResError = {
+  // mẫu thông báo
   SYS_ERROR: { message: "Lỗi server" },
   EMAIL_INVALID: { message: "Email không thể để trống" },
   EMAIL_EXIST: { message: "Email đã tồn tại" },
